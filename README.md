@@ -6,7 +6,7 @@
 <div align="center">
 
 ![GitHub stars](https://img.shields.io/github/stars/ganyariya/misskey-mcp-server?style=social)
-![GitHub forks](https://img.shields.io/github/forks/ganyariya/metoro-mcp-server?style=social)
+![GitHub forks](https://img.shields.io/github/forks/ganyariya/misskey-mcp-server?style=social)
 ![GitHub issues](https://img.shields.io/github/issues/ganyariya/misskey-mcp-server)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/ganyariya/misskey-mcp-server)
 ![GitHub license](https://img.shields.io/github/license/ganyariya/misskey-mcp-server)
