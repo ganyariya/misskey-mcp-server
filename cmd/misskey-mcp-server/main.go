@@ -5,20 +5,14 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/ganyariya/misskey-mcp-server/internal/tools"
 	mcp_golang "github.com/metoro-io/mcp-golang"
 	"github.com/metoro-io/mcp-golang/transport/stdio"
 	"github.com/sirupsen/logrus"
 	"github.com/yitsushi/go-misskey"
-	"github.com/yitsushi/go-misskey/core"
-	"github.com/yitsushi/go-misskey/models"
-	"github.com/yitsushi/go-misskey/services/notes"
 )
 
 const SERVER_NAME = "misskey-mcp-server"
-
-type PostNoteArguments struct {
-	Text string `json:"text" jsonschema:"required,description=The text of the note to post"`
-}
 
 func run(
 	transport string,
@@ -29,22 +23,8 @@ func run(
 
 	server := mcp_golang.NewServer(stdio.NewStdioServerTransport(), mcp_golang.WithName(SERVER_NAME))
 
-	err := server.RegisterTool(
-		"misskey-note-post",
-		"Post a note to Misskey",
-		func(arguments PostNoteArguments) (*mcp_golang.ToolResponse, error) {
-			text := arguments.Text
-			response, err := misskeyClient.Notes().Create(notes.CreateRequest{
-				Text:       core.NewString(text),
-				Visibility: models.VisibilityPublic,
-			})
-			if err != nil {
-				return nil, err
-			}
-
-			return mcp_golang.NewToolResponse(mcp_golang.NewTextContent("Note posted successfully: " + text + response.CreatedNote.ID)), nil
-		},
-	)
+	// TODO: Add logger
+	err := tools.RegisterMisskeyTools(server, misskeyClient)
 	if err != nil {
 		return nil
 	}
@@ -65,8 +45,10 @@ func main() {
 	flag.StringVar(&transport, "t", "stdio", "transport type (stdio only for now)")
 	flag.StringVar(&transport, "transport", "stdio", "transport type (stdio only for now)")
 
+	// TODO: Add LogLevel
 	var logLevel string
 	flag.StringVar(&logLevel, "log-level", "info", "Log level (debug, info, warn, error)")
+	flag.StringVar(&logLevel, "l", "info", "Log level (debug, info, warn, error)")
 
 	flag.Parse()
 
