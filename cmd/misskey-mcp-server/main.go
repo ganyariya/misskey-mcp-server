@@ -6,10 +6,11 @@ import (
 	"os"
 
 	"github.com/ganyariya/misskey-mcp-server/internal/tools"
+	misskeyclient "github.com/ganyariya/misskey-mcp-server/internal/misskey" // Added import
 	mcp_golang "github.com/metoro-io/mcp-golang"
 	"github.com/metoro-io/mcp-golang/transport/stdio"
 	"github.com/sirupsen/logrus"
-	"github.com/yitsushi/go-misskey"
+	misskeysdk "github.com/yitsushi/go-misskey" // Aliased import
 )
 
 const SERVER_NAME = "misskey-mcp-server"
@@ -17,14 +18,14 @@ const SERVER_NAME = "misskey-mcp-server"
 func run(
 	transport string,
 	logLevel string,
-	misskeyClient *misskey.Client,
+	client misskeyclient.Client, // Changed parameter type
 ) error {
 	done := make(chan struct{})
 
 	server := mcp_golang.NewServer(stdio.NewStdioServerTransport(), mcp_golang.WithName(SERVER_NAME))
 
 	// TODO: Add logger
-	err := tools.RegisterMisskeyTools(server, misskeyClient)
+	err := tools.RegisterMisskeyTools(server, client) // Use the new parameter name
 	if err != nil {
 		return nil
 	}
@@ -57,21 +58,23 @@ func main() {
 	misskeyDomain := os.Getenv("MISSKEY_DOMAIN")
 	misskeyPath := os.Getenv("MISSKEY_PATH")
 
-	misskeyClient, err := misskey.NewClientWithOptions(
-		misskey.WithAPIToken(misskeyApiToken),
-		misskey.WithBaseURL(
+	sdkClient, err := misskeysdk.NewClientWithOptions( // Renamed original client
+		misskeysdk.WithAPIToken(misskeyApiToken),
+		misskeysdk.WithBaseURL(
 			misskeyProtocol,
 			misskeyDomain,
 			misskeyPath,
 		),
-		misskey.WithLogLevel(logrus.DebugLevel),
+		misskeysdk.WithLogLevel(logrus.DebugLevel),
 	)
 	if err != nil {
-		fmt.Printf("failed to create misskey client: %v\n", err)
+		fmt.Printf("failed to create misskey sdk client: %v\n", err) // Updated log message
 		return
 	}
 
-	if err := run(transport, logLevel, misskeyClient); err != nil {
+	wrappedClient := misskeyclient.NewMisskeyGoClientWrapper(sdkClient) // Create wrapped client
+
+	if err := run(transport, logLevel, wrappedClient); err != nil { // Pass wrapped client
 		panic(err)
 	}
 }
