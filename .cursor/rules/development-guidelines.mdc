@@ -1,0 +1,39 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Development Guidelines
+
+## Coding Standards
+
+1. Follow Go's standard coding conventions
+2. Package names should be lowercase with underscores for word separation
+3. Add appropriate documentation comments for exported identifiers (those starting with capital letters)
+
+## Testing
+
+- Implement appropriate tests for each package
+- Test files should follow the `*_test.go` naming convention
+
+## Pull Requests
+
+1. Work on new features or bug fixes in a new branch
+2. Write clear and specific commit messages
+3. Include the changes and reasons in the pull request description
+
+## Comments
+
+- Keep comments to a minimum. In fact, try to write as few as possible.
+
+## Required Actions After Implementation
+
+After implementation, please update the .cursor/rules as needed.
+Add context to make development easier.
+
+Also, update README.md according to the implemented API endpoints.
+
+## Reference Resources
+
+- [[Misskey API Documentation](mdc:https:/misskey.io/api-doc)](mdc:https://misskey.io/api-doc)
+- https://github.com/yitsushi/go-misskey
