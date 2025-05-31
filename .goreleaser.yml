@@ -1,0 +1,25 @@
+# .goreleaser.yml
+project_name: misskey-mcp-server
+
+builds:
+  - main: ./cmd/misskey-mcp-server/main.go
+    binary: misskey-mcp-server
+    goos:
+      - linux
+      - windows
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0 # Optional: common for GoReleaser to ensure static binaries
+
+archives:
+  - format: tar.gz
+    # this name template makes the OS and Arch compatible with the results of uname.
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+    files:
+      - README.md # Example: include README in the archive
+
+# TODO: Add checksums, signing, and other release features as needed.
+# Read more at https://goreleaser.com/customization/

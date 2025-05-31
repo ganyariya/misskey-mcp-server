@@ -1,0 +1,20 @@
+name: Go Vet
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  vet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.21' # Assuming a recent Go version, can be adjusted
+      - name: Go Vet
+        run: go vet ./...
