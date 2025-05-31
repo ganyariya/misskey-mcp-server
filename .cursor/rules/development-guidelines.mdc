@@ -13,16 +13,15 @@ alwaysApply: true
 
 ## Testing
 
-- Implement appropriate tests for each package
-- Test files should follow the `*_test.go` naming convention
+Do not implement tests.
+misskey-mcp-server only calls APIs and does not have complex implementations.
 
 ## Steps to be executed
 
 - Please make sure that `go build` always succeeds for misskey-mcp-server.
-- If test files exist, please make sure that `go test` passes successfully.
 
 After satisfying the above, create a commit and pull request.
-If the build or tests do not succeed, do not try to fix it on your own; please ask a human.
+If the build does not succeed, do not try to fix it on your own; please ask a human.
 
 ## Pull Requests
 

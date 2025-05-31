@@ -6,17 +6,14 @@ require (
 	github.com/metoro-io/mcp-golang v0.11.0
 	github.com/sirupsen/logrus v1.7.0
 	github.com/yitsushi/go-misskey v1.1.6
-	github.com/stretchr/testify v1.9.0
 )
 
 require (
 	github.com/bahlo/generic-list-go v0.2.0 // indirect
 	github.com/buger/jsonparser v1.1.1 // indirect
-	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/invopop/jsonschema v0.12.0 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
-	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/tidwall/gjson v1.18.0 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
