@@ -1,4 +1,3 @@
-
 <div align="center">
     <img src="./docs/images/logo.png" height="300" alt="misskey-mcp-server logo">
 </div>
@@ -25,9 +24,40 @@ So, I would appreciate contributions (PRs) from everyone!
 
 ## Features
 
-- [ ] [notes](https://misskey.io/api-doc#tag/notes)
-  - [x] create (post) a note
-- [ ] other wip...
+### MCP Tools Implementation Status
+
+| MCP Tool Name | Misskey API Endpoint | Status |
+|--------------|---------------------|---------|
+| post_misskey_note | `/notes/create` | ✅ |
+| get_misskey_note | `/notes/show` | ❌ |
+| get_misskey_timeline | `/notes/timeline` | ❌ |
+| get_misskey_user | `/users/show` | ❌ |
+| get_misskey_user_notes | `/users/notes` | ❌ |
+| get_misskey_user_following | `/users/following` | ❌ |
+| get_misskey_user_followers | `/users/followers` | ❌ |
+| get_misskey_notifications | `/i/notifications` | ❌ |
+| get_misskey_mentions | `/notes/mentions` | ❌ |
+| get_misskey_antenna | `/antennas/show` | ❌ |
+| get_misskey_antenna_notes | `/antennas/notes` | ❌ |
+| get_misskey_channel | `/channels/show` | ❌ |
+| get_misskey_channel_notes | `/channels/notes` | ❌ |
+| get_misskey_gallery | `/gallery/posts/show` | ❌ |
+| get_misskey_gallery_posts | `/gallery/posts` | ❌ |
+| get_misskey_page | `/pages/show` | ❌ |
+| get_misskey_drive_files | `/drive/files` | ❌ |
+| post_misskey_reaction | `/notes/reactions/create` | ❌ |
+| delete_misskey_reaction | `/notes/reactions/delete` | ❌ |
+| post_misskey_follow | `/following/create` | ❌ |
+| delete_misskey_follow | `/following/delete` | ❌ |
+| post_misskey_renote | `/notes/create` (renote) | ❌ |
+| post_misskey_reply | `/notes/create` (reply) | ❌ |
+| get_misskey_search | `/notes/search` | ❌ |
+| get_misskey_search_by_tag | `/notes/search-by-tag` | ❌ |
+| get_misskey_hashtags | `/hashtags/trend` | ❌ |
+| get_misskey_emoji | `/emojis` | ❌ |
+| get_misskey_meta | `/meta` | ❌ |
+| get_misskey_instance | `/federation/instances` | ❌ |
+| get_misskey_stats | `/stats` | ❌ |
 
 ## Usage
 
@@ -72,34 +102,6 @@ Setup your mcp.json as below.
   }
 }
 ```
-
-# TODO
-
-I'm not very familiar with Go myself.   
-I would appreciate contributions (PRs) from everyone!
-
-I will prioritize implementing the fetching/updating of timelines, notes, and users.   
-Regarding administrator privileges, perhaps it's safer not to implement them...?
-
-- [ ] Vibe Coding Support
-  - [ ] Create cline rules
-  - [ ] Create cursor rules
-- [ ] CI by GitHub Actions
-- [ ] Release by goreleaser
-- [ ] Refine Go Architecture
-- [ ] Implement go tests
-- [ ] Add docker-compose for development and mcp.json
-- [ ] Implement each api tool
-  - [ ] note
-  - [ ] user
-  - [ ] gallery
-  - [ ] reaction
-  - [ ] page
-  - [ ] antenna
-  - [ ] channel
-  - [ ] federation
-  - [ ] drive
-  - [ ] notification
 
 # Thanks to reference
 
