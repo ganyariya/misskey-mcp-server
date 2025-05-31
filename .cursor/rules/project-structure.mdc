@@ -11,7 +11,8 @@ This project is a Misskey MCP server implemented in Go.
 
 - `cmd/misskey-mcp-server/`: Main entry point
 - `internal/`: Internal packages
-  - `tools/`: Internal tools
+  - `misskey_tools/`: Internal packages for Misskey API tools (e.g., note, user). Each subdirectory typically represents a Misskey API category.
+  - `tools/`: Core tool registration and interface definitions.
 - `docs/images/`: Project image files
 
 ## Important Files

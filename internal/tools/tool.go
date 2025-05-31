@@ -1,7 +1,7 @@
 package tools
 
 import (
-	"github.com/ganyariya/misskey-mcp-server/internal/tools/note"
+	"github.com/ganyariya/misskey-mcp-server/internal/misskey_tools/note"
 	mcp_golang "github.com/metoro-io/mcp-golang"
 	"github.com/yitsushi/go-misskey"
 )
