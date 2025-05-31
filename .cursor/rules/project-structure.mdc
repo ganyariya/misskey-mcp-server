@@ -11,7 +11,9 @@ alwaysApply: true
 
 - `cmd/misskey-mcp-server/`: メインのエントリーポイント
 - `internal/`: 内部パッケージ
-  - `tools/`: 内部ツール
+  - `misskey/`: Misskey APIクライアントや関連ツールを配置
+    - `notes/`: ノート関連のツール (例: `post_note.go`)
+    - (今後他のAPIエンドポイント用のディレクトリが追加される可能性あり)
 - `docs/images/`: プロジェクトの画像ファイル
 
 ## 重要なファイル
