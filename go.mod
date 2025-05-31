@@ -6,6 +6,7 @@ require (
 	github.com/metoro-io/mcp-golang v0.11.0
 	github.com/sirupsen/logrus v1.7.0
 	github.com/yitsushi/go-misskey v1.1.6
+	github.com/golang/mock/gomock v1.6.0
 )
 
 require (

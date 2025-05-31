@@ -15,6 +15,8 @@ alwaysApply: true
 
 - Implement appropriate tests for each package
 - Test files should follow the `*_test.go` naming convention
+- Tests should primarily focus on core domain logic.
+- E2E (End-to-End) or extensive communication-related tests (e.g., testing direct external API interactions) are generally not required for routine package development. These may be covered by separate, broader integration tests.
 
 ## Steps to be executed
 
