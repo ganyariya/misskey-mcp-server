@@ -32,7 +32,7 @@ So, I would appreciate contributions (PRs) from everyone!
 | get_misskey_note | `/notes/show` | ❌ |
 | get_misskey_timeline | `/notes/timeline` | ❌ |
 | get_misskey_user | `/users/show` | ❌ |
-| get_misskey_user_notes | `/users/notes` | ❌ |
+| get_misskey_user_notes | `/users/notes` | ✅ |
 | get_misskey_user_following | `/users/following` | ❌ |
 | get_misskey_user_followers | `/users/followers` | ❌ |
 | get_misskey_notifications | `/i/notifications` | ❌ |
@@ -112,3 +112,18 @@ Setup your mcp.json as below.
   - https://github.com/grafana/mcp-grafana
 - Misskey Go API SDK
   - https://github.com/yitsushi/go-misskey
+
+### `get_misskey_user_notes`
+
+Retrieves notes for a specific Misskey user.
+
+**Arguments:**
+
+- `userId` (string, required): The ID of the user whose notes you want to retrieve.
+
+**Example Request:**
+```json
+{
+  "userId": "some_user_id"
+}
+```
