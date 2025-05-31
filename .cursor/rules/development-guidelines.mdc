@@ -3,38 +3,37 @@ description:
 globs: 
 alwaysApply: true
 ---
-# 開発ガイドライン
+# Development Guidelines
 
-## コーディング規約
+## Coding Standards
 
-1. Goの標準的なコーディング規約に従ってください
-2. パッケージ名は小文字で、単語の区切りはアンダースコアを使用
-3. エクスポートされる識別子（大文字で始まる）には適切なドキュメントコメントを付けてください
+1. Follow Go's standard coding conventions
+2. Package names should be lowercase with underscores for word separation
+3. Add appropriate documentation comments for exported identifiers (those starting with capital letters)
 
-## テスト
+## Testing
 
-- 各パッケージには適切なテストを実装してください
-- テストファイルは `*_test.go` という命名規則に従ってください
+- Implement appropriate tests for each package
+- Test files should follow the `*_test.go` naming convention
 
-## プルリクエスト
+## Pull Requests
 
-1. 機能追加やバグ修正は新しいブランチで作業してください
-2. コミットメッセージは明確で具体的に記述してください
-3. プルリクエストの説明には変更内容と理由を記載してください
+1. Work on new features or bug fixes in a new branch
+2. Write clear and specific commit messages
+3. Include the changes and reasons in the pull request description
 
-## コメント
+## Comments
 
-- コメントは最小限でよいです。むしろ、できるだけ書かないてください。
+- Keep comments to a minimum. In fact, try to write as few as possible.
 
-## 実装したときに必ずおこなうこと
+## Required Actions After Implementation
 
-実装をおこなったら .cursor/rules を適宜更新してください。
-より開発が行いやすくなるようにコンテキストを追加してください。
+After implementation, please update the .cursor/rules as needed.
+Add context to make development easier.
 
-また実装した API エンドポイントにあわせて README.md を更新してください。
+Also, update README.md according to the implemented API endpoints.
 
-## 参考リソース
+## Reference Resources
 
-- [Misskey API ドキュメント](mdc:https:/misskey.io/api-doc)
-- [Go 公式ドキュメント](mdc:https:/golang.org/doc)
+- [[Misskey API Documentation](mdc:https:/misskey.io/api-doc)](mdc:https://misskey.io/api-doc)
 - https://github.com/yitsushi/go-misskey

@@ -18,7 +18,7 @@
 
 # misskey-mcp-server
 
-misskey-mcp-server is an **unofficial** MCP (Model Context Protocol) server for [Misskey](https://misskey-hub.net/ja/).   
+misskey-mcp-server is an **unofficial** MCP (Model Context Protocol) server for [Misskey](https://misskey-hub.net/).   
 Currently, it only has **the bare minimum functionality: posting notes**.   
 So, I would appreciate contributions (PRs) from everyone!
 
