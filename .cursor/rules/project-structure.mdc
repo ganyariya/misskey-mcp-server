@@ -3,31 +3,31 @@ description:
 globs: 
 alwaysApply: true
 ---
-# プロジェクト構造ガイド
+# Project Structure Guide
 
-このプロジェクトはGoで実装されたMisskey MCPサーバーです。
+This project is a Misskey MCP server implemented in Go.
 
-## 主要なディレクトリ構造
+## Main Directory Structure
 
-- `cmd/misskey-mcp-server/`: メインのエントリーポイント
-- `internal/`: 内部パッケージ
-  - `tools/`: 内部ツール
-- `docs/images/`: プロジェクトの画像ファイル
+- `cmd/misskey-mcp-server/`: Main entry point
+- `internal/`: Internal packages
+  - `tools/`: Internal tools
+- `docs/images/`: Project image files
 
-## 重要なファイル
+## Important Files
 
-- [go.mod](mdc:go.mod): 依存関係の管理
-- [README.md](mdc:README.md): プロジェクトの概要と使用方法
+- [go.mod](mdc:go.mod): Dependency management
+- [README.md](mdc:README.md): Project overview and usage
 
-## 開発環境のセットアップ
+## Development Environment Setup
 
-開発を始める前に、以下の環境変数を設定する必要があります：
+Before starting development, you need to set the following environment variables:
 
-- `MISSKEY_API_TOKEN`: MisskeyのAPIトークン
-- `MISSKEY_PROTOCOL`: プロトコル（http/https）
-- `MISSKEY_DOMAIN`: Misskeyサーバーのドメイン
-- `MISSKEY_PATH`: パス（オプション）
+- `MISSKEY_API_TOKEN`: Misskey API token
+- `MISSKEY_PROTOCOL`: Protocol (http/https)
+- `MISSKEY_DOMAIN`: Misskey server domain
+- `MISSKEY_PATH`: Path (optional)
 
-ただし、 AI のあなたにはこれらの環境変数を実際に用意することは難しいです。
-そのため、必ずしも MCP サーバとして正常に疎通できるか？は可能であれば確認してほしいですが、難しければ行わなくてよいです。
-かわりに人間のエンジニアに正常に動くか確認を依頼してください。
+However, as an AI, it is difficult for you to actually provide these environment variables.
+Therefore, it is not always necessary to confirm whether the MCP server can communicate properly. Please check if possible, but if it is difficult, you do not need to do so.
+Instead, please ask a human engineer to confirm that it works correctly.
