@@ -16,6 +16,14 @@ alwaysApply: true
 - Implement appropriate tests for each package
 - Test files should follow the `*_test.go` naming convention
 
+## Steps to be executed
+
+- Please make sure that `go build` always succeeds for misskey-mcp-server.
+- If test files exist, please make sure that `go test` passes successfully.
+
+After satisfying the above, create a commit and pull request.
+If the build or tests do not succeed, do not try to fix it on your own; please ask a human.
+
 ## Pull Requests
 
 1. Work on new features or bug fixes in a new branch
@@ -24,7 +32,8 @@ alwaysApply: true
 
 ## Comments
 
-- Keep comments to a minimum. In fact, try to write as few as possible.
+Never write comments. Absolutely do not write them.
+They are redundant.
 
 ## Required Actions After Implementation
 
