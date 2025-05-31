@@ -1,4 +1,3 @@
-# .goreleaser.yml
 project_name: misskey-mcp-server
 
 builds:
@@ -16,10 +15,6 @@ builds:
 
 archives:
   - format: tar.gz
-    # this name template makes the OS and Arch compatible with the results of uname.
     name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
     files:
-      - README.md # Example: include README in the archive
-
-# TODO: Add checksums, signing, and other release features as needed.
-# Read more at https://goreleaser.com/customization/
+      - README.md

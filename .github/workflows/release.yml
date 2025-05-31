@@ -3,7 +3,7 @@ name: Go Release
 on:
   push:
     branches:
-      - 'main' # Assuming 'main' is the release branch
+      - "main"
 
 jobs:
   goreleaser:
@@ -12,19 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          # Allow goreleaser to access older tag information.
           fetch-depth: 0
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.21' # Assuming a recent Go version
+          go-version: "1.24"
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v5
         with:
-          # The version of goreleaser to use.
           version: latest
           args: release --clean
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # GoReleaser Pro users can uncomment the following line
-          # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
